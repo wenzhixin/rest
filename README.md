@@ -131,3 +131,9 @@ rest.path.root.getHello(function(status) {
 	console.log(status, data);
 });
 </pre>
+
+
+
+* author: 
+email: wenzhixin2010@gmail.com  
+weibo.com: @_文翼_  
