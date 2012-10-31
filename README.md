@@ -10,14 +10,14 @@
 Content-Type: application/json  
 <pre>
 [
-	{
-		"id": 1,
-		"username": "user1"
-	}, 
-	{
-		"id": 2,
-		"username": "user2"
-	}, ...
+		{
+			"id": 1,
+			"username": "user1"
+		}, 
+		{
+			"id": 2,
+			"username": "user2"
+		}, ...
 ]
 </pre>
 
@@ -56,8 +56,8 @@ HTTP/1.1 200 OK
 
 #### 引用 jquery 和 rest.js 文件
 <pre>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="rest.js"></script>
+&lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="rest.js"&gt;&lt;/script&gt;
 </pre>
 
 #### 定义 Rest
