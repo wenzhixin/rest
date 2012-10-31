@@ -134,6 +134,6 @@ rest.path.root.getHello(function(status) {
 
 
 
-* author: 
-email: wenzhixin2010@gmail.com  
-weibo.com: @_文翼_  
+## author: 
+* email: wenzhixin2010@gmail.com  
+* weibo.com: <a hre="http://weibo.com/2292826740">@_文翼_</a> 
