@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>index</title>
+  <meta name="description" content="" />
+  <meta name="author" content="zhixin wen" />
+</head>
+<body>
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="rest.js"></script>
+  <script type="text/javascript">
+  	var methods = ['get:/users', 'post:/login', 'put:/user', 'delete:/user'];
+	var rest = new Rest(methods);
+	
+	//获取用户信息: rest.getUsers(callback);
+	rest.getUsers(function(status, users) {
+	    console.log(status);//200 or 401
+	    console.log(users);//user list
+	});
+	
+	//根据条件获取用户信息: rest.getUsers(callback, params);
+	rest.getUsers(function(status, users) {
+		console.log(status);//200 or 401
+		console.log(users);//user list
+	}, {
+		limit: 10,
+		sort: 'id',
+		order: 'asc'
+	});
+	
+	//登录: rest.postLogin(callback, params);
+	rest.postLogin(function(status, users) {
+	    console.log(status);//200 or 401
+	}, {
+	    username: 'user1',
+	    password: 'password1'
+	});
+	
+	//修改用户: rest.putUser(callback, id, params);
+	rest.putUser(function(status) {
+	    console.log(status);
+	}, 1, {
+	    email: 'email@xx.com'
+	});
+	
+	//删除用户: rest.deleteUser(callback, id);
+	rest.deleteUser(function(status) {
+	    console.log(status);
+	}, 1);
+	
+	
+	var method = ['get:/path/root/test', 'get:/path/root/hello', ];
+	var rest = new Rest(method);
+	rest.path.root.getTest(function(status, data) {
+		console.log(status, data);
+	});
+	rest.path.root.getHello(function(status) {
+		console.log(status, data);
+	});
+  </script>
+</body>
+</html>

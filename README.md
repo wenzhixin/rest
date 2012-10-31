@@ -5,7 +5,7 @@
 ### Rest API
 
 #### 获取用户信息
-* GET /users
+* GET /users?limit=10&sort=id&order=asc
 * 输出：
 Content-Type: application/json  
 <pre>
@@ -78,6 +78,17 @@ rest.getUsers(function(status, users) {
 	console.log(users);//user list
 });
 </pre>
+<pre>
+//根据条件获取用户信息: rest.getUsers(callback, params);
+rest.getUsers(function(status, users) {
+	console.log(status);//200 or 401
+	console.log(users);//user list
+}, {
+	limit: 10,
+	sort: 'id',
+	order: 'asc'
+});
+</pre>
 
 #### POST
 <pre>
@@ -103,7 +114,20 @@ rest.putUser(function(status) {
 #### DELETE
 <pre>
 //删除用户: rest.deleteUser(callback, id);
-rest.putUser(function(status) {
+rest.deleteUser(function(status) {
 	console.log(status);
 }, 1);
+</pre>
+
+
+### 支持多级 url
+<pre>
+var method = ['get:/path/root/test', 'get:/path/root/hello', ];
+var rest = new Rest(method);
+rest.path.root.getTest(function(status, data) {
+	console.log(status, data);
+});
+rest.path.root.getHello(function(status) {
+	console.log(status, data);
+});
 </pre>
