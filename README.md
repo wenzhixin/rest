@@ -64,9 +64,6 @@ HTTP/1.1 200 OK
 <pre>
 var methods = ['get:/users', 'post:/login', 'put:/user', 'delete:/user'];
 var rest = new Rest(methods);
-</pre>
-<pre>
-var methods = ['get:/path/users', 'post:/path/login', 'put:/path/user', 'delete:/path/user'];
 var rest = new Rest('/path', methods);//baseurl: '/path'
 </pre>
 
