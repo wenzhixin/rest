@@ -1,6 +1,5 @@
 /**
  * @author zhixin wen <wenzhixin2010@gmail.com>
- * @update 2013-07-02
  */
 
 function Rest() {
@@ -21,10 +20,10 @@ function Rest() {
 						type : type,
 						dataType : 'json',
 						success : function(data) {
-							callback(200, data);
+							callback.call(this, 200, data);
 						},
 						error : function(XMLHttpRequest) {
-							callback(XMLHttpRequest.status);
+							callback.call(this, XMLHttpRequest.status);
 						}
 					};
 				switch (type) {
