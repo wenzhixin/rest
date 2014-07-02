@@ -78,7 +78,10 @@ function Rest() {
 		for (var j = 0; j < tmpArr.length; j++) {
 			if (tmpArr[j] !== '') {
 				if (j === tmpArr.length - 1) {
-					funcArr.push(type + tmpArr[j].substring(0, 1).toUpperCase() + tmpArr[j].substring(1));
+					tmpArr[j] = $.map(tmpArr[j].split('_'), function(str) {
+						return str.substring(0, 1).toUpperCase() + str.substring(1);
+					}).join('');
+					funcArr.push(type + tmpArr[j]);
 				} else {
 					funcArr.push(tmpArr[j]);
 				}
